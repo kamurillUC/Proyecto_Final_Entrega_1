@@ -2,9 +2,9 @@
 
 Link en GitHub: [Proyecto_Final_Entrega_1](https://github.com/kamurillUC/Proyecto_Final_Entrega_1)
 
-Solo ejecutar el main.py
-Funciones en mis_funciones.py
-Clases en mis_clases.py
+Solo ejecutar el main.py  
+Funciones en mis_funciones.py  
+Clases en mis_clases.py  
  
 # Requerimientos: 
 1- Deberá crear una “Portada” que incluya el nombre “Tienda Simón” y sus datos personales  e imprimir estos datos en la terminal. 
