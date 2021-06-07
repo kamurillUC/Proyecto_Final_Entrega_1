@@ -10,16 +10,6 @@ def limpiar_consola():
     elif os.name == "ce" or os.name == "dos" or os.name == "nt":
         os.system("cls")
 
-
-
-#Funcion para identificar si es numero
-def identificar_si_numero(var):
-    if var[0] == ('-', '+'):
-        return var[1:].isdigit()
-    else:
-        return var.isdigit()   
-
-
 #Funciones para obtener UI
 def get_logo():
     logo = ""
@@ -193,7 +183,7 @@ def opcion_menu(cantidad_opciones):
     opcion = 0
     while bandera == 0:
         respuesta = input(f"{mis_clases.consolaColor.AMARILLO}Opción: {mis_clases.consolaColor.NORMAL}")
-        es_numero = identificar_si_numero(respuesta)
+        es_numero = respuesta.isdigit()
         if es_numero == True:                    
             opcion = int(respuesta)
             if opcion > 0 and opcion <= cantidad_opciones:                

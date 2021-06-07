@@ -30,13 +30,15 @@ while bandera == 0:
 
     mis_funciones.limpiar_consola()  
     if usuario_actual == None:              
-        print('¡Usuario y contraseña inválida!')   
+        print(f"{mis_clases.consolaColor.ROJO}¡Usuario y contraseña inválida!{mis_clases.consolaColor.NORMAL}") 
+        respuesta = input(f"{mis_clases.consolaColor.AMARILLO}Presione cualquier tecla para salir...{mis_clases.consolaColor.NORMAL}")  
         break     
     else:   
         #Sistema de inventario    
         print(f"{mis_clases.consolaColor.AMARILLO}Bienvenido al sistema de inventarios de tienda Simón, {usuario_actual['full_name']} es un placer atenderle{mis_clases.consolaColor.NORMAL}")        
-        respuesta = input(f"{mis_clases.consolaColor.AMARILLO}¿Desea ingresar al sistema de inventarios?(Si/No){mis_clases.consolaColor.NORMAL}")
-        if respuesta.lower() == 'si':
+        respuesta = input(f"{mis_clases.consolaColor.AMARILLO}¿Desea ingresar al sistema de inventarios?(Si/No) {mis_clases.consolaColor.NORMAL}\n")
+
+        if respuesta.lower().strip() == 'si':
             while bandera == 0:
                 mis_funciones.limpiar_consola()
                 print(mis_funciones.get_departamento())
