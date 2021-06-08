@@ -3,11 +3,12 @@ import mis_clases, os, ast, hashlib
 salt = b'KamurillUC'
 
 #Funcion para limpiar consola segun OS
-def limpiar_consola():
-    import os
-    if os.name == "posix" or os.name == "mac":
+def limpiar_consola():   
+    #Linux and Mac 
+    if os.name == "posix":
         os.system("clear")
-    elif os.name == "ce" or os.name == "dos" or os.name == "nt":
+    #Windows
+    elif os.name == "nt":
         os.system("cls")
 
 #Funciones para obtener UI
@@ -39,12 +40,12 @@ def get_gracias():
     gracias += mis_clases.consolaColor.MAGENTA
     gracias += "___________________________________________________________________________________________\n\n"    
     gracias += mis_clases.consolaColor.CYAN
-    gracias += " ██████╗ ██████╗  █████╗  ██████╗██╗ █████╗ ███████╗\n"
-    gracias += "██╔════╝ ██╔══██╗██╔══██╗██╔════╝██║██╔══██╗██╔════╝\n"
-    gracias += "██║  ███╗██████╔╝███████║██║     ██║███████║███████╗\n"
-    gracias += "██║   ██║██╔══██╗██╔══██║██║     ██║██╔══██║╚════██║\n"
-    gracias += "╚██████╔╝██║  ██║██║  ██║╚██████╗██║██║  ██║███████║\n"
-    gracias += " ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝╚═╝  ╚═╝╚══════╝\n"
+    gracias += "                    ██████╗ ██████╗  █████╗  ██████╗██╗ █████╗ ███████╗\n"
+    gracias += "                   ██╔════╝ ██╔══██╗██╔══██╗██╔════╝██║██╔══██╗██╔════╝\n"
+    gracias += "                   ██║  ███╗██████╔╝███████║██║     ██║███████║███████╗\n"
+    gracias += "                   ██║   ██║██╔══██╗██╔══██║██║     ██║██╔══██║╚════██║\n"
+    gracias += "                   ╚██████╔╝██║  ██║██║  ██║╚██████╗██║██║  ██║███████║\n"
+    gracias += "                    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝╚═╝  ╚═╝╚══════╝\n"
     gracias += mis_clases.consolaColor.MAGENTA
     gracias += "___________________________________________________________________________________________\n" 
         
