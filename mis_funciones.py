@@ -4,7 +4,7 @@ salt = b'KamurillUC'
 
 #Funcion para limpiar consola segun OS
 def limpiar_consola():   
-    #Linux and Mac 
+    #Unix systems 
     if os.name == "posix":
         os.system("clear")
     #Windows
