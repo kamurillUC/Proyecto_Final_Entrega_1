@@ -31,6 +31,7 @@ def get_logo():
 
     return logo
 
+
 def get_gracias():
     gracias = ""
     gracias += mis_clases.consolaColor.AZUL
@@ -51,6 +52,7 @@ def get_gracias():
 
     return gracias
 
+
 def get_portada():      
     portada = ""
     portada += mis_clases.consolaColor.AZUL   
@@ -69,6 +71,7 @@ def get_portada():
 
     return portada
 
+
 def get_login():   
     login = "" 
     login += mis_clases.consolaColor.AZUL   
@@ -84,6 +87,7 @@ def get_login():
     login += mis_clases.consolaColor.NORMAL 
     return login
 
+
 def cargar_archivo(opcion):
     path = os.getcwd()
 
@@ -95,6 +99,7 @@ def cargar_archivo(opcion):
     file.close()
 
     return ast.literal_eval(content)
+
 
 def encontrar_usuario(usuarios, nombre_usuario, password):
     
@@ -111,7 +116,6 @@ def encontrar_usuario(usuarios, nombre_usuario, password):
 def generar_hash(password):
     dk = hashlib.pbkdf2_hmac('sha256', password.encode(), salt, 100000) 
     return dk.hex()
-
 
 
 def get_departamento():   
@@ -170,6 +174,7 @@ def get_menu(usuario_actual, departamento):
     
     return menu
 
+
 def get_cantidad_opciones(usuario_actual):
     if usuario_actual['role'] == 'admin':
         return 6
@@ -177,6 +182,7 @@ def get_cantidad_opciones(usuario_actual):
         return 3
     else:
         return 0
+
 
 def opcion_menu(cantidad_opciones):
     bandera = 0
@@ -192,6 +198,7 @@ def opcion_menu(cantidad_opciones):
         print(f"{mis_clases.consolaColor.ROJO}¡Por favor ingresar un número válido!{mis_clases.consolaColor.NORMAL}")   
                
     return opcion
+
 
 def get_opciones_producto(usuario_actual, opcion):
     respuesta = ""
@@ -209,6 +216,7 @@ def get_opciones_producto(usuario_actual, opcion):
             respuesta += "Consulta de productos"
 
     return respuesta    
+
 
 def menu_por_departamento(usuario_actual, departamento):
     bandera = 0
