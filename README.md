@@ -5,7 +5,11 @@ Link en GitHub: [Proyecto_Final_Entrega_1](https://github.com/kamurillUC/Proyect
 Solo ejecutar el main.py  
 Funciones en mis_funciones.py  
 Clases en mis_clases.py  
- 
+
+# Extras:
+Manejo de contraseñas con cifrado irreversible(Hash) 
+Lectura de usuarios a partir de un archivo .txt
+
 # Requerimientos: 
 1- Deberá crear una “Portada” que incluya el nombre “Tienda Simón” y sus datos personales  e imprimir estos datos en la terminal. 
 2- Deberá preguntar al interesado por su nombre de usuario y contraseña. a. El sistema debe contar con dos roles, uno de administrador y otro de visitante. b. Se recomienda el uso de diccionarios.  

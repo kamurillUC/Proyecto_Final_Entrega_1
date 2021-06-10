@@ -1,5 +1,6 @@
 import mis_clases, os, ast, hashlib
 
+#Salt unico para el cifrado y comparación de la contraseña
 salt = b'KamurillUC'
 
 #Funcion para limpiar consola segun OS
@@ -32,7 +33,7 @@ def get_logo():
 
     return logo
 
-
+#Funciones para obtener UI
 def get_gracias():
     gracias = ""
     gracias += mis_clases.consolaColor.AZUL
@@ -53,7 +54,7 @@ def get_gracias():
 
     return gracias
 
-
+#Funciones para obtener UI
 def get_portada():      
     portada = ""
     portada += mis_clases.consolaColor.AZUL   
@@ -72,7 +73,7 @@ def get_portada():
 
     return portada
 
-
+#Funciones para obtener UI
 def get_login():   
     login = "" 
     login += mis_clases.consolaColor.AZUL   
@@ -88,7 +89,8 @@ def get_login():
     login += mis_clases.consolaColor.NORMAL 
     return login
 
-
+#Funcion para hacer la carga del archivo y devolver un diccionario
+#Opcion es para futura carga de archivo de productos
 def cargar_archivo(opcion):
     path = os.getcwd()
 
@@ -101,7 +103,7 @@ def cargar_archivo(opcion):
 
     return ast.literal_eval(content)
 
-
+#Funcion para el login de un usuario contra una contraseña cifrada irreversible
 def encontrar_usuario(usuarios, nombre_usuario, password):
     
     dk = hashlib.pbkdf2_hmac('sha256', password.encode(), salt, 100000)       
@@ -113,12 +115,12 @@ def encontrar_usuario(usuarios, nombre_usuario, password):
             else:
                 return usuario
 
-
+#Funcion para cifrar una contraseña
 def generar_hash(password):
     dk = hashlib.pbkdf2_hmac('sha256', password.encode(), salt, 100000) 
     return dk.hex()
 
-
+#Funciones para obtener UI
 def get_departamento():   
     depa = ""
     depa += mis_clases.consolaColor.AZUL  
@@ -139,7 +141,7 @@ def get_departamento():
 
     return depa
 
-
+#Funcion para generar la linea dependiendo del departamento
 def generar_linea(departamento):
     if departamento.lower() == 'damas':
         return "..................Damas................."
@@ -148,7 +150,7 @@ def generar_linea(departamento):
     elif departamento.lower() == 'kids':
         return "..................Niños................."
 
-
+#Funciones para obtener Menu
 def get_menu(usuario_actual, departamento):
     menu = ""
     menu += mis_clases.consolaColor.AZUL  
@@ -175,7 +177,7 @@ def get_menu(usuario_actual, departamento):
     
     return menu
 
-
+#Función para definir las opciones del menu dependiendo del rol del usuario
 def get_cantidad_opciones(usuario_actual):
     if usuario_actual['role'] == 'admin':
         return 6
@@ -184,7 +186,7 @@ def get_cantidad_opciones(usuario_actual):
     else:
         return 0
 
-
+#Función para limitar a solo las opciones disponibles del menú
 def opcion_menu(cantidad_opciones):
     bandera = 0
     opcion = 0
@@ -200,7 +202,7 @@ def opcion_menu(cantidad_opciones):
                
     return opcion
 
-
+#Función para obtener las opciones de producto dependiendo del rol del usuario
 def get_opciones_producto(usuario_actual, opcion):
     respuesta = ""
     if usuario_actual['role'] == 'admin':
@@ -218,7 +220,7 @@ def get_opciones_producto(usuario_actual, opcion):
 
     return respuesta    
 
-
+#Función para dar los menús dependendiendo del rol del usuario 
 def menu_por_departamento(usuario_actual, departamento):
     bandera = 0
     while bandera == 0:        
